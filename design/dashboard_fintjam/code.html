@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fintjam - Dashboard Utama</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efedee",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#3366cc",
+                        "on-primary-fixed": "#001946",
+                        "surface-bright": "#faf9fa",
+                        "secondary-fixed-dim": "#c2c7cc",
+                        "on-surface-variant": "#434653",
+                        "primary-fixed": "#d9e2ff",
+                        "on-tertiary-fixed": "#211b00",
+                        "surface-dim": "#dbdadb",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#dcc661",
+                        "secondary-container": "#dfe3e8",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "secondary": "#5a5f63",
+                        "surface-variant": "#e3e2e3",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303031",
+                        "on-secondary-container": "#606569",
+                        "tertiary-container": "#bfab49",
+                        "surface-container-low": "#f5f3f4",
+                        "inverse-primary": "#b1c5ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container-high": "#e9e8e9",
+                        "on-primary-container": "#e7ebff",
+                        "inverse-on-surface": "#f2f0f1",
+                        "on-background": "#1b1c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#094cb2",
+                        "surface": "#faf9fa",
+                        "outline-variant": "#c3c6d5",
+                        "outline": "#737784",
+                        "on-tertiary-fixed-variant": "#524600",
+                        "on-error": "#ffffff",
+                        "background": "#faf9fa",
+                        "surface-container-highest": "#e3e2e3",
+                        "on-primary-fixed-variant": "#00419d",
+                        "tertiary": "#6d5e00",
+                        "secondary-fixed": "#dfe3e8",
+                        "tertiary-fixed": "#f9e37a",
+                        "on-surface": "#1b1c1d",
+                        "surface-tint": "#2259bf",
+                        "on-tertiary-container": "#4a3f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "display": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Public Sans"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .bg-glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body">
+<header class="docked w-full top-0 sticky bg-surface-container-lowest dark:bg-surface-dim z-50">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary dark:text-inverse-primary" style="font-size: 28px;">account_balance_wallet</span>
+<h1 class="font-headline text-2xl font-bold text-primary dark:text-inverse-primary">Fintjam</h1>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant cursor-pointer hover:text-primary transition-colors">search</span>
+<span class="material-symbols-outlined text-on-surface-variant dark:text-on-surface-variant cursor-pointer hover:text-primary transition-colors">settings</span>
+</div>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-6 pt-8 pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<section class="md:col-span-8 flex flex-col gap-8">
+<div class="flex flex-col gap-2">
+<p class="font-label text-sm text-on-surface-variant tracking-wider uppercase">Saldo Tersedia</p>
+<div class="flex items-baseline gap-2">
+<span class="font-headline text-4xl font-extrabold text-primary">Rp</span>
+<span class="font-headline text-5xl font-extrabold text-primary">45.250.000</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4 transition-transform active:scale-95">
+<div class="w-12 h-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest">Total Pemasukan</p>
+<p class="font-headline text-xl font-bold">Rp 12.400.000</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4 transition-transform active:scale-95">
+<div class="w-12 h-12 rounded-full bg-error-container/20 flex items-center justify-center text-error">
+<span class="material-symbols-outlined">trending_down</span>
+</div>
+<div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest">Total Pengeluaran</p>
+<p class="font-headline text-xl font-bold">Rp 8.150.000</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm border border-outline-variant/10">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline text-2xl font-bold">Laporan Keuangan</h2>
+<p class="text-on-surface-variant text-sm">Aktivitas bulanan 6 bulan terakhir</p>
+</div>
+<div class="flex gap-4 font-label text-xs uppercase font-bold tracking-tighter text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span> Pemasukan</span>
+<span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-outline-variant"></span> Pengeluaran</span>
+</div>
+</div>
+<div class="h-64 flex items-end justify-between gap-4 px-2">
+<div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+<div class="w-full flex justify-center items-end gap-1 h-full">
+<div class="w-4 bg-primary/20 group-hover:bg-primary/40 rounded-t-sm transition-all" style="height: 60%;"></div>
+<div class="w-4 bg-primary group-hover:brightness-110 rounded-t-sm transition-all" style="height: 80%;"></div>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant">JAN</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+<div class="w-full flex justify-center items-end gap-1 h-full">
+<div class="w-4 bg-primary/20 group-hover:bg-primary/40 rounded-t-sm transition-all" style="height: 45%;"></div>
+<div class="w-4 bg-primary group-hover:brightness-110 rounded-t-sm transition-all" style="height: 70%;"></div>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant">FEB</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+<div class="w-full flex justify-center items-end gap-1 h-full">
+<div class="w-4 bg-primary/20 group-hover:bg-primary/40 rounded-t-sm transition-all" style="height: 85%;"></div>
+<div class="w-4 bg-primary group-hover:brightness-110 rounded-t-sm transition-all" style="height: 95%;"></div>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant">MAR</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+<div class="w-full flex justify-center items-end gap-1 h-full">
+<div class="w-4 bg-primary/20 group-hover:bg-primary/40 rounded-t-sm transition-all" style="height: 30%;"></div>
+<div class="w-4 bg-primary group-hover:brightness-110 rounded-t-sm transition-all" style="height: 55%;"></div>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant">APR</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+<div class="w-full flex justify-center items-end gap-1 h-full">
+<div class="w-4 bg-primary/20 group-hover:bg-primary/40 rounded-t-sm transition-all" style="height: 75%;"></div>
+<div class="w-4 bg-primary group-hover:brightness-110 rounded-t-sm transition-all" style="height: 85%;"></div>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant">MEI</span>
+</div>
+<div class="flex-1 flex flex-col items-center gap-2 h-full justify-end group">
+<div class="w-full flex justify-center items-end gap-1 h-full">
+<div class="w-4 bg-primary/20 group-hover:bg-primary/40 rounded-t-sm transition-all" style="height: 50%;"></div>
+<div class="w-4 bg-primary group-hover:brightness-110 rounded-t-sm transition-all" style="height: 65%;"></div>
+</div>
+<span class="font-label text-[10px] text-on-surface-variant">JUN</span>
+</div>
+</div>
+</div>
+</section>
+<section class="md:col-span-4 flex flex-col gap-6">
+<div class="bg-surface-container-high p-6 rounded-xl">
+<h3 class="font-headline font-bold text-lg mb-4">Transaksi Terakhir</h3>
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">restaurant</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Restoran Padang</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-label">Kemarin, 19:30</p>
+</div>
+</div>
+<p class="font-bold text-error text-sm">-Rp 120.000</p>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">payments</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Gaji Bulanan</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-label">24 Jun, 09:00</p>
+</div>
+</div>
+<p class="font-bold text-primary text-sm">+Rp 8.500.000</p>
+</div>
+<div class="flex items-center justify-between p-3 bg-surface-container-lowest rounded-lg">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">shopping_bag</span>
+</div>
+<div>
+<p class="font-semibold text-sm">Supermarket Jaya</p>
+<p class="text-[10px] text-on-surface-variant uppercase font-label">23 Jun, 15:45</p>
+</div>
+</div>
+<p class="font-bold text-error text-sm">-Rp 450.000</p>
+</div>
+</div>
+<button class="w-full mt-6 py-3 text-sm font-label font-bold uppercase tracking-widest text-primary border border-primary/20 rounded-full hover:bg-primary hover:text-white transition-all">Lihat Semua</button>
+</div>
+<div class="bg-tertiary-fixed p-6 rounded-xl">
+<h3 class="font-headline font-bold text-lg mb-2 text-on-tertiary-fixed">Kategori Anggaran</h3>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-xs mb-1 font-label">
+<span>Makanan &amp; Minuman</span>
+<span>85%</span>
+</div>
+<div class="w-full h-2 bg-on-tertiary-fixed/10 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 85%;"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1 font-label">
+<span>Transportasi</span>
+<span>40%</span>
+</div>
+<div class="w-full h-2 bg-on-tertiary-fixed/10 rounded-full overflow-hidden">
+<div class="bg-tertiary h-full" style="width: 40%;"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<div class="fixed top-20 right-6 z-[100] max-w-sm animate-in fade-in slide-in-from-right-10 duration-500">
+<div class="bg-error-container text-on-error-container p-4 rounded-xl shadow-2xl flex items-start gap-3 border border-error/10">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">warning</span>
+<div>
+<p class="font-bold text-sm leading-tight">Peringatan: Pengeluaran Anda hampir mencapai limit bulanan!</p>
+<p class="text-xs mt-1 opacity-80">Sisa anggaran Anda untuk bulan ini adalah Rp 150.000.</p>
+</div>
+<button class="text-on-error-container opacity-50 hover:opacity-100">
+<span class="material-symbols-outlined text-sm">close</span>
+</button>
+</div>
+</div>
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-lowest dark:bg-surface-dim">
+<div class="flex flex-col items-center justify-center bg-primary-container dark:bg-on-primary-fixed-variant text-on-primary-container dark:text-primary-fixed rounded-full px-4 py-1 active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Dashboard</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-4 py-1 hover:bg-surface-container dark:hover:bg-surface-variant transition-all active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Transactions</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-4 py-1 hover:bg-surface-container dark:hover:bg-surface-variant transition-all active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">print</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Report</span>
+</div>
+<div class="flex flex-col items-center justify-center text-on-surface-variant dark:text-on-secondary-fixed-variant px-4 py-1 hover:bg-surface-container dark:hover:bg-surface-variant transition-all active:scale-90 transition-transform cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label text-[10px] uppercase tracking-wider">Profile</span>
+</div>
+</nav>
+<button class="fixed bottom-24 right-6 w-14 h-14 rounded-full bg-primary text-white shadow-xl flex items-center justify-center hover:scale-110 active:scale-95 transition-all">
+<span class="material-symbols-outlined" style="font-size: 32px;">add</span>
+</button>
+</body></html>

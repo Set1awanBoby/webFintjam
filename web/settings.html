@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fintjam Settings</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efedee",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#3366cc",
+                        "on-primary-fixed": "#001946",
+                        "surface-bright": "#faf9fa",
+                        "secondary-fixed-dim": "#c2c7cc",
+                        "on-surface-variant": "#434653",
+                        "primary-fixed": "#d9e2ff",
+                        "on-tertiary-fixed": "#211b00",
+                        "surface-dim": "#dbdadb",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#dcc661",
+                        "secondary-container": "#dfe3e8",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "secondary": "#5a5f63",
+                        "surface-variant": "#e3e2e3",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303031",
+                        "on-secondary-container": "#606569",
+                        "tertiary-container": "#bfab49",
+                        "surface-container-low": "#f5f3f4",
+                        "inverse-primary": "#b1c5ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container-high": "#e9e8e9",
+                        "on-primary-container": "#e7ebff",
+                        "inverse-on-surface": "#f2f0f1",
+                        "on-background": "#1b1c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#094cb2",
+                        "surface": "#faf9fa",
+                        "outline-variant": "#c3c6d5",
+                        "outline": "#737784",
+                        "on-tertiary-fixed-variant": "#524600",
+                        "on-error": "#ffffff",
+                        "background": "#faf9fa",
+                        "surface-container-highest": "#e3e2e3",
+                        "on-primary-fixed-variant": "#00419d",
+                        "tertiary": "#6d5e00",
+                        "secondary-fixed": "#dfe3e8",
+                        "tertiary-fixed": "#f9e37a",
+                        "on-surface": "#1b1c1d",
+                        "surface-tint": "#2259bf",
+                        "on-tertiary-container": "#4a3f00"
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+    <header class="bg-surface-container-lowest docked w-full top-0 sticky z-50">
+        <div class="flex justify-between items-center px-6 py-4 w-full">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary cursor-pointer" onclick="window.location.href='index.html'">arrow_back</span>
+                <h1 class="font-headline text-2xl font-bold text-primary">Fintjam</h1>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-2xl mx-auto px-6 py-12 pb-32">
+        <header class="mb-12">
+            <h2 class="font-headline text-4xl font-bold text-on-surface mb-2 text-2xl">Pengaturan</h2>
+            <p class="font-body text-on-surface-variant">Perbarui informasi akun dan batas pengeluaran Anda.</p>
+        </header>
+        <div class="space-y-12">
+            <section class="space-y-6">
+                <h3 class="font-label text-xs uppercase tracking-[0.2em] text-outline font-semibold">Keamanan Akun</h3>
+                <div class="grid grid-cols-1 gap-8">
+                    <div class="group">
+                        <label class="block font-headline text-lg font-bold text-on-surface mb-3" for="username">Username</label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-on-surface font-body transition-colors" id="username" type="text" />
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label class="block font-headline text-lg font-bold text-on-surface mb-3" for="password">Password Baru</label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-0 py-3 text-on-surface font-body transition-colors" id="password" type="password" placeholder="••••••••" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="space-y-6">
+                <h3 class="font-label text-xs uppercase tracking-[0.2em] text-outline font-semibold">Preferensi Keuangan</h3>
+                <div class="group">
+                    <label class="block font-headline text-lg font-bold text-on-surface mb-3" for="limit">Limit Pengeluaran Bulanan</label>
+                    <div class="relative">
+                        <div class="absolute left-0 bottom-3 flex items-center pointer-events-none">
+                            <span class="font-body text-on-surface font-medium mr-2">Rp</span>
+                        </div>
+                        <input class="w-full bg-surface-container-lowest border-0 border-b border-outline-variant focus:border-primary focus:ring-0 pl-8 pr-0 py-3 text-on-surface font-body transition-colors font-semibold" id="limit" type="number" />
+                    </div>
+                    <p class="mt-4 text-xs font-label text-on-surface-variant leading-relaxed">
+                        Menetapkan batas bulanan membantu Anda melacak anggaran. Anda akan menerima notifikasi saat mencapai 90% dari jumlah ini.
+                    </p>
+                </div>
+            </section>
+            <footer class="pt-8 flex flex-col gap-4">
+                <button id="save-settings" class="w-full py-4 px-6 bg-gradient-to-r from-primary to-primary-container text-on-primary font-body font-semibold rounded-full hover:opacity-90 active:scale-[0.98] transition-all shadow-md">
+                    Simpan Perubahan
+                </button>
+                <button onclick="window.location.href='index.html'" class="w-full py-4 px-6 text-primary font-body font-medium hover:underline transition-all">
+                    Batal
+                </button>
+            </footer>
+        </div>
+    </main>
+    
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-surface-container-lowest">
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-all active:scale-90 transition-transform cursor-pointer" onclick="window.location.href='index.html'">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="font-label text-[10px] uppercase tracking-wider mt-1">Dashboard</span>
+        </div>
+        <div class="flex flex-col items-center justify-center text-on-surface-variant px-4 py-1 hover:bg-surface-container transition-all active:scale-90 transition-transform cursor-pointer" onclick="window.location.href='report.html'">
+            <span class="material-symbols-outlined">print</span>
+            <span class="font-label text-[10px] uppercase tracking-wider mt-1">Report</span>
+        </div>
+        <div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-full px-4 py-1 active:scale-90" onclick="window.location.href='settings.html'">
+            <span class="material-symbols-outlined">person</span>
+            <span class="font-label text-[10px] uppercase tracking-wider mt-1">Profile</span>
+        </div>
+    </nav>
+    
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+            
+            const user = getCurrentUser();
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+            const limitInput = document.getElementById('limit');
+            
+            usernameInput.value = user.username;
+            limitInput.value = user.limit;
+            
+            document.getElementById('save-settings').addEventListener('click', () => {
+                const newUsername = usernameInput.value.trim();
+                const newPassword = passwordInput.value.trim();
+                const newLimit = parseFloat(limitInput.value);
+                
+                if (!newUsername) {
+                    showToast('Username tidak boleh kosong!', 'error');
+                    return;
+                }
+                
+                if (newLimit <= 0) {
+                    showToast('Limit harus lebih dari 0!', 'error');
+                    return;
+                }
+                
+                const users = getData(STORAGE_KEYS.USERS) || [];
+                const userIndex = users.findIndex(u => u.id === user.id);
+                
+                if (userIndex !== -1) {
+                    // Check if username taken by others
+                    if (users.some((u, index) => u.username === newUsername && index !== userIndex)) {
+                        showToast('Username sudah digunakan orang lain!', 'error');
+                        return;
+                    }
+                    
+                    users[userIndex].username = newUsername;
+                    users[userIndex].limit = newLimit;
+                    if (newPassword) {
+                        users[userIndex].password = newPassword;
+                    }
+                    
+                    saveData(STORAGE_KEYS.USERS, users);
+                    showToast('Pengaturan berhasil diperbarui!', 'success');
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 1000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

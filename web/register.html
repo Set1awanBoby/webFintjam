@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Fintjam - Daftar Akun</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@300;400;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e3e2e3",
+                        "surface-bright": "#faf9fa",
+                        "primary-fixed": "#d9e2ff",
+                        "outline": "#737784",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#2259bf",
+                        "inverse-surface": "#303031",
+                        "on-primary-fixed-variant": "#00419d",
+                        "inverse-on-surface": "#f2f0f1",
+                        "surface-container-low": "#f5f3f4",
+                        "on-primary-container": "#e7ebff",
+                        "secondary-container": "#dfe3e8",
+                        "surface-container-high": "#e9e8e9",
+                        "on-background": "#1b1c1d",
+                        "on-primary-fixed": "#001946",
+                        "surface-variant": "#e3e2e3",
+                        "secondary-fixed": "#dfe3e8",
+                        "tertiary-fixed-dim": "#dcc661",
+                        "on-tertiary-container": "#4a3f00",
+                        "on-surface": "#1b1c1d",
+                        "tertiary-fixed": "#f9e37a",
+                        "surface-container": "#efedee",
+                        "background": "#faf9fa",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "on-tertiary-fixed-variant": "#524600",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "on-primary": "#ffffff",
+                        "on-surface-variant": "#434653",
+                        "inverse-primary": "#b1c5ff",
+                        "secondary": "#5a5f63",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#c3c6d5",
+                        "primary": "#094cb2",
+                        "on-tertiary-fixed": "#211b00",
+                        "primary-container": "#3366cc",
+                        "surface-dim": "#dbdadb",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary-fixed": "#171c20",
+                        "surface": "#faf9fa",
+                        "secondary-fixed-dim": "#c2c7cc",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#606569",
+                        "tertiary-container": "#bfab49",
+                        "tertiary": "#6d5e00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "display": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { background-color: #faf9fa; }
+        body { min-height: max(884px, 100dvh); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body min-h-screen flex flex-col">
+    <nav class="docked w-full top-0 sticky bg-surface-container-lowest flex justify-between items-center px-8 py-6 z-50">
+        <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary text-3xl">account_balance_wallet</span>
+            <span class="font-headline text-2xl font-bold text-primary tracking-tight">Fintjam</span>
+        </div>
+    </nav>
+    <main class="flex-grow flex items-center justify-center px-4 py-12 md:py-24">
+        <div class="max-w-xl w-full">
+            <header class="text-center mb-12">
+                <h1 class="font-headline text-5xl md:text-6xl font-bold text-on-surface tracking-tight mb-4">Daftar Akun</h1>
+                <p class="font-body text-lg text-on-surface-variant leading-relaxed opacity-80">Mulai kelola keuangan Anda dengan presisi.</p>
+            </header>
+            <div class="bg-surface-container-low p-8 md:p-12 rounded-xl">
+                <form class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-1" for="username">Username</label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 focus:ring-2 focus:ring-primary rounded-lg px-4 py-4 font-body text-on-surface placeholder:text-outline/40 transition-all outline-none" id="username" name="username" placeholder="Masukkan username Anda" type="text" required/>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-1" for="password">Password</label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 focus:ring-2 focus:ring-primary rounded-lg px-4 py-4 font-body text-on-surface placeholder:text-outline/40 transition-all outline-none" id="password" name="password" placeholder="Buat password minimal 8 karakter" type="password" required/>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant ml-1" for="confirm-password">Konfirmasi Password</label>
+                        <div class="relative">
+                            <input class="w-full bg-surface-container-lowest border-none ring-1 ring-outline-variant/15 focus:ring-2 focus:ring-primary rounded-lg px-4 py-4 font-body text-on-surface placeholder:text-outline/40 transition-all outline-none" id="confirm-password" name="confirm-password" placeholder="Ulangi password Anda" type="password" required/>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-body font-semibold py-4 rounded-full hover:opacity-90 active:scale-[0.98] transition-all flex justify-center items-center gap-2 group" type="submit">
+                            <span>Daftar Sekarang</span>
+                            <span class="material-symbols-outlined text-xl group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-10 text-center">
+                    <p class="font-body text-on-surface-variant">
+                        Sudah memiliki akun? 
+                        <a class="text-primary font-semibold hover:underline underline-offset-4 ml-1" href="login.html">Masuk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="w-full bg-surface-container-lowest mt-auto px-8 py-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-end">
+            <div class="space-y-4">
+                <div class="font-headline text-xl font-bold text-primary">Fintjam</div>
+                <p class="font-body text-sm text-on-surface-variant max-w-xs leading-relaxed">Sistem manajemen keuangan digital yang dirancang untuk transparansi dan ketepatan data finansial Anda.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 border-l border-outline-variant/20 pl-8">
+                <div class="space-y-2">
+                    <div class="font-label text-[10px] uppercase tracking-[0.2em] text-tertiary font-bold">Total Penyaluran</div>
+                    <div class="font-headline text-3xl font-bold text-on-surface">Rp12,4T+</div>
+                </div>
+                <div class="space-y-2">
+                    <div class="font-label text-[10px] uppercase tracking-[0.2em] text-tertiary font-bold">Pengguna Aktif</div>
+                    <div class="font-headline text-3xl font-bold text-on-surface">2,8 Juta</div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-label uppercase tracking-widest text-on-surface-variant/60">
+            <div>© 2024 Fintjam Digital Solutions. Hak Cipta Dilindungi.</div>
+        </div>
+    </footer>
+    
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+        checkAuth(false);
+    </script>
+</body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Tambah Transaksi - Fintjam</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@400;500;600&amp;family=Public+Sans:wght@400;500;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#efedee",
+                        "on-secondary-fixed-variant": "#42474b",
+                        "on-error-container": "#93000a",
+                        "primary-container": "#3366cc",
+                        "on-primary-fixed": "#001946",
+                        "surface-bright": "#faf9fa",
+                        "secondary-fixed-dim": "#c2c7cc",
+                        "on-surface-variant": "#434653",
+                        "primary-fixed": "#d9e2ff",
+                        "on-tertiary-fixed": "#211b00",
+                        "surface-dim": "#dbdadb",
+                        "on-tertiary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "tertiary-fixed-dim": "#dcc661",
+                        "secondary-container": "#dfe3e8",
+                        "primary-fixed-dim": "#b1c5ff",
+                        "secondary": "#5a5f63",
+                        "surface-variant": "#e3e2e3",
+                        "error-container": "#ffdad6",
+                        "inverse-surface": "#303031",
+                        "on-secondary-container": "#606569",
+                        "tertiary-container": "#bfab49",
+                        "surface-container-low": "#f5f3f4",
+                        "inverse-primary": "#b1c5ff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-secondary-fixed": "#171c20",
+                        "surface-container-high": "#e9e8e9",
+                        "on-primary-container": "#e7ebff",
+                        "inverse-on-surface": "#f2f0f1",
+                        "on-background": "#1b1c1d",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#094cb2",
+                        "surface": "#faf9fa",
+                        "outline-variant": "#c3c6d5",
+                        "outline": "#737784",
+                        "on-tertiary-fixed-variant": "#524600",
+                        "on-error": "#ffffff",
+                        "background": "#faf9fa",
+                        "surface-container-highest": "#e3e2e3",
+                        "on-primary-fixed-variant": "#00419d",
+                        "tertiary": "#6d5e00",
+                        "secondary-fixed": "#dfe3e8",
+                        "tertiary-fixed": "#f9e37a",
+                        "on-surface": "#1b1c1d",
+                        "surface-tint": "#2259bf",
+                        "on-tertiary-container": "#4a3f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "display": ["Noto Serif"],
+                        "body": ["Inter"],
+                        "label": ["Public Sans"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        body { min-height: max(884px, 100dvh); }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body min-h-screen flex flex-col">
+    <header class="bg-surface-container-lowest dark:bg-surface-dim docked w-full top-0 sticky z-40">
+        <div class="flex justify-between items-center px-6 py-4 w-full">
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary cursor-pointer" onclick="window.location.href='index.html'">arrow_back</span>
+                <h2 class="font-headline text-2xl font-bold text-primary">Fintjam</h2>
+            </div>
+        </div>
+    </header>
+    <main class="flex-grow flex flex-col min-h-screen">
+        <div class="flex-grow p-6 md:p-12 lg:p-16 max-w-4xl mx-auto w-full">
+            <section class="mb-12">
+                <h3 class="font-headline text-headline-sm font-bold tracking-tight text-on-background mb-2 text-2xl">Tambah Transaksi</h3>
+                <p class="font-body text-on-surface-variant">Catat pengeluaran atau pemasukan terbaru Anda di sini.</p>
+            </section>
+            <form id="tx-form" class="space-y-8">
+                <!-- Transaction Type Toggle -->
+                <div class="bg-surface-container rounded-full p-1.5 flex gap-1 items-center max-w-sm mx-auto">
+                    <button id="btn-pengeluaran" class="flex-1 bg-surface-container-lowest text-primary py-3 px-6 rounded-full font-label text-sm font-bold tracking-wider transition-all shadow-sm" type="button">
+                        PENGELUARAN
+                    </button>
+                    <button id="btn-pemasukan" class="flex-1 text-on-surface-variant hover:bg-surface-container-high py-3 px-6 rounded-full font-label text-sm font-bold tracking-wider transition-all" type="button">
+                        PEMASUKAN
+                    </button>
+                </div>
+                <!-- Hidden Type Input -->
+                <input type="hidden" id="tx-type" value="pengeluaran" />
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-2 bg-surface-container-lowest p-8 rounded-xl flex flex-col items-center justify-center space-y-4">
+                        <label class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Nominal Transaksi</label>
+                        <div class="flex items-baseline gap-2">
+                            <span class="font-headline text-3xl font-bold text-outline">Rp</span>
+                            <input id="tx-amount" class="w-full text-center font-headline text-6xl font-bold bg-transparent border-none focus:ring-0 text-primary placeholder:text-surface-variant p-0 m-0 appearance-none" placeholder="0" type="number" required />
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label text-[11px] uppercase tracking-widest text-on-surface-variant ml-1">Kategori</label>
+                        <div class="relative group">
+                            <select id="tx-category" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container rounded-xl px-4 py-4 font-body text-sm appearance-none cursor-pointer">
+                                <option>Makanan &amp; Minuman</option>
+                                <option>Transportasi</option>
+                                <option>Belanja</option>
+                                <option>Gaji / Pendapatan</option>
+                                <option>Investasi</option>
+                                <option>Temen Ngutang</option>
+                            </select>
+                            <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-outline">expand_more</span>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <label class="font-label text-[11px] uppercase tracking-widest text-on-surface-variant ml-1">Tanggal</label>
+                        <div class="relative">
+                            <input id="tx-date" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container rounded-xl px-4 py-4 font-body text-sm appearance-none cursor-pointer" type="date" required />
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-2">
+                        <label class="font-label text-[11px] uppercase tracking-widest text-on-surface-variant ml-1">Deskripsi / Catatan</label>
+                        <textarea id="tx-note" class="w-full bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container rounded-xl px-4 py-4 font-body text-sm resize-none" placeholder="Contoh: Makan siang nasi padang..." rows="3"></textarea>
+                    </div>
+                </div>
+                <div class="pt-4">
+                    <button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary font-label text-sm font-bold uppercase tracking-widest py-5 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.01] active:scale-[0.98] transition-all flex items-center justify-center gap-3" type="submit">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">save</span>
+                        SIMPAN TRANSAKSI
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            checkAuth();
+            
+            const btnPemasukan = document.getElementById('btn-pemasukan');
+            const btnPengeluaran = document.getElementById('btn-pengeluaran');
+            const typeInput = document.getElementById('tx-type');
+            const dateInput = document.getElementById('tx-date');
+            
+            // Set default date to today
+            dateInput.valueAsDate = new Date();
+            
+            btnPemasukan.addEventListener('click', () => {
+                typeInput.value = 'pemasukan';
+                btnPemasukan.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnPemasukan.classList.remove('text-on-surface-variant');
+                btnPengeluaran.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnPengeluaran.classList.add('text-on-surface-variant');
+            });
+            
+            btnPengeluaran.addEventListener('click', () => {
+                typeInput.value = 'pengeluaran';
+                btnPengeluaran.classList.add('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnPengeluaran.classList.remove('text-on-surface-variant');
+                btnPemasukan.classList.remove('bg-surface-container-lowest', 'text-primary', 'shadow-sm');
+                btnPemasukan.classList.add('text-on-surface-variant');
+            });
+            
+            const form = document.getElementById('tx-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const amount = parseFloat(document.getElementById('tx-amount').value);
+                const category = document.getElementById('tx-category').value;
+                const date = document.getElementById('tx-date').value;
+                const note = document.getElementById('tx-note').value;
+                const type = typeInput.value;
+                
+                if (amount <= 0) {
+                    showToast('Nominal harus lebih dari 0!', 'error');
+                    return;
+                }
+                
+                const transactions = getData(STORAGE_KEYS.TRANSACTIONS) || [];
+                const newTx = {
+                    id: Date.now().toString(),
+                    user_id: getCurrentUserId(),
+                    type,
+                    amount,
+                    category,
+                    created_at: new Date(date).toISOString(),
+                    note
+                };
+                
+                transactions.push(newTx);
+                saveData(STORAGE_KEYS.TRANSACTIONS, transactions);
+                
+                showToast('Transaksi berhasil disimpan!', 'success');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
